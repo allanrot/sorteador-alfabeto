@@ -93,7 +93,7 @@ var height,
   textCtx,
   textPixels = [],
   input;
-var colors = ["#F7A541", "#F45D4C", "#FA2E59", "#4783c3", "#9c6cb7"];
+var colors = ["#fffb00", "#ff7300", "#ff00c8", "#002bff", "#7a00ff"];
 
 function initStage() {
   width = window.innerWidth;
