@@ -2,21 +2,48 @@
 <html>
   <head>
     <title>Sorteador de letras</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.cdnfonts.com/css/panton" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.cdnfonts.com/css/panton" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="s.ico" />
   </head>
   <body>
-    <div class="d-flex-center flex-column h-100">
-      <h1>Sorteador de letras</h1>
-      <p class="p-0 mb-0 text-red">Letras excluídas do sorteio:</p>
-      <p id="excluded-letters" class="p-0 m-0"></p>
-      <p class="p-0 mb-0 text-green">Letras disponíveis</p>
-      <p id="alphabet" class="p-0 m-0"></p>
-      <div class="my-5">
-        <button id="sort" class="btn" role="button">Sortear</button>
+    <div class="content">
+      <div class="d-flex-center flex-column h-100">
+        <h1>Sorteador de letras</h1>
+        <p class="p-0 mb-0 text-red">Letras excluídas do sorteio:</p>
+        <p id="excluded-letters" class="p-0 m-0"></p>
+        <p class="p-0 mb-0 text-green">Letras disponíveis</p>
+        <p id="alphabet" class="p-0 m-0"></p>
+        <div class="my-5">
+          <button id="sort" class="btn" role="button">Sortear</button>
+        </div>
+      </div>
+    </div>
+    <div id="modal" class="d-none">
+      <div class="modal">
+        <div class="modal-content">
+          <p id="letter" class="p-0 m-0">Sorteando</p>
+          <div id="preloader">
+            <div id="loader"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="picked-letter" class="d-none">
+      <div class="modal-all-black">
+        <div class="d-flex-center my-5">
+          <button id="btn-reset" class="btn">Sortear novamente</button>
+        </div>
+          <p id="picked-letter-text" class="d-flex-center" class="p-0 m-0">A letra sorteada foi:</p>
+          <div id="stage"></div>
+
+          <canvas id="text" width="700" height="800"></canvas>
+
+          <input id="input-picked-letter" type="hidden" value="" />
       </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
